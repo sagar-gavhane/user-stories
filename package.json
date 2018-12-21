@@ -1,25 +1,45 @@
 {
-  "name": "workbench-client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+	"name": "workbench-client",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"prop-types": "^15.6.2",
+		"react": "^16.7.0-alpha.2",
+		"react-dom": "^16.7.0-alpha.2",
+		"react-scripts": "2.1.1",
+		"styled-components": "^4.1.3",
+		"yup": "^0.26.6"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"lint": "eslint src",
+		"prettier": "prettier \"**/*.+(js|jsx|json|css|md)\"",
+		"format": "npm run prettier -- --write",
+		"validate": "npm run lint && npm run prettier -- --list-different",
+		"precommit": "lint-staged",
+		"mockup": "json-server -p 4000 db.json --delay 1000 --watch"
+	},
+	"eslintConfig": {
+		"extends": "react-app",
+		"rules": {
+			"no-console": "error"
+		}
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
+	"devDependencies": {
+		"husky": "^1.2.1",
+		"jest-dom": "^3.0.0",
+		"json-server": "^0.14.0",
+		"lint-staged": "^8.1.0",
+		"prettier": "^1.15.3",
+		"react-testing-library": "^5.4.2"
+	}
 }
